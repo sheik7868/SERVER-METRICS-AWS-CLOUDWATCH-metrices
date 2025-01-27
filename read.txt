@@ -1,0 +1,13 @@
+6. Configure Environment Variables for Dynamic Passwords
+To configure different passwords for different servers, you can set the METRICS_API_PASSWORD and RECEIVER_API_PASSWORD environment variables before running the application on each server.
+
+For Linux:
+export METRICS_API_PASSWORD="your_server_specific_password"
+export RECEIVER_API_PASSWORD="receiver_specific_password"
+./dist/sys-log-linux-x64
+
+
+For Windows:
+set METRICS_API_PASSWORD=your_server_specific_password
+set RECEIVER_API_PASSWORD=receiver_specific_password
+dist\sys-log-win-x64.exe

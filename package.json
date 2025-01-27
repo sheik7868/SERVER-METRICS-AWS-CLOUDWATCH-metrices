@@ -1,0 +1,46 @@
+{
+  "name": "sys-log",
+  "version": "1.0.0",
+  "description": "System log monitoring and metrics collection service",
+  "main": "app.js",
+  "bin": {
+    "sys-log": "./app.js"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "build": "rm -rf dist && pkg . --targets node16-linux-x64,node16-win-x64,node16-macos-x64 --output dist/sys-log",
+    "pkg": "pkg . --targets node16-linux-x64,node16-win-x64 --output dist/sys-log"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "express-basic-auth": "^1.2.1",
+    "express-rate-limit": "^6.11.2",
+    "pino": "^8.21.0",
+    "pino-pretty": "^13.0.0",
+    "systeminformation": "^5.25.11"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.0",
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.0"
+  },
+  "pkg": {
+  "assets": [
+    "key/*.pem" 
+  ],
+  "scripts": [
+    "node_modules/axios/dist/node/axios.cjs" 
+  ],
+  "targets": [
+    "node16-linux-x64",
+    "node16-macos-x64",
+    "node16-win-x64"
+  ]
+},
+  "engines": {
+    "node": ">=14"
+  },
+  "author": "Harish Raj",
+  "license": "MIT"
+}
